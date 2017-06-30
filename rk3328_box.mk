@@ -16,6 +16,10 @@
 
 include device/rockchip/rk3328/BoardConfig.mk
 
+GAPPS_VARIANT := micro
+GAPPS_FORCE_PACKAGE_OVERRIDES := true
+GAPPS_FORCE_BROWSER_OVERRIDES := true
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/rockchip/rk3328/device.mk)
 $(call inherit-product, device/rockchip/rk3328/product.mk)
@@ -46,3 +50,5 @@ PRODUCT_MODEL := rk3328-box
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
+
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)

@@ -23,6 +23,15 @@
 
 include device/rockchip/rk3328/BoardConfig.mk
 
+GAPPS_VARIANT := nano
+GAPPS_EXCLUDED_PACKAGES += SetupWraith
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.live_tv.xml:system/etc/permissions/android.software.live_tv.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/rockchip/rk3328/device.mk)
 $(call inherit-product, device/rockchip/rk3328/product.mk)
@@ -39,7 +48,6 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
-        rild \
         Launcher3
 
 PRODUCT_NAME := rk3328
@@ -51,3 +59,5 @@ PRODUCT_MANUFACTURER := rockchip
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
+
+$(call inherit-product, vendor/google/atv-build/atv-vendor.mk)
