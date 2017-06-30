@@ -25,6 +25,10 @@ PRODUCT_PROPERTY_OVERRIDES := \
 #TARGET_USERIMAGES_USE_F2FS := true
 #endif
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.udisk.visible=true \
+    ro.hdmi.device_type=4
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.${TARGET_BOARD_PLATFORM_PRODUCT}.rc:root/init.${TARGET_BOARD_PLATFORM_PRODUCT}.rc \
     $(LOCAL_PATH)/fstab.rk30board.bootmode.unknown:root/fstab.rk30board.bootmode.unknown \

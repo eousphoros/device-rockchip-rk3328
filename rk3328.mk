@@ -41,15 +41,20 @@ $(call inherit-product, device/rockchip/common/device.mk)
 PRODUCT_CHARACTERISTICS := box
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=160
+    ro.sf.lcd_density=160
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
 
 PRODUCT_AAPT_CONFIG := mdpi large xlarge
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
-        Launcher3 \
-        rild
+    Launcher3 \
+    rild \
+    displayd \
+    hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
 PRODUCT_NAME := rk3328
 PRODUCT_DEVICE := rk3328

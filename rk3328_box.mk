@@ -27,12 +27,13 @@ $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, device/google/atv/products/atv_generic.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=320
+    ro.sf.lcd_density=320
 
 PRODUCT_CHARACTERISTICS := tv
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.live_tv.xml:system/etc/permissions/android.software.live_tv.xml
+    frameworks/native/data/etc/android.software.live_tv.xml:system/etc/permissions/android.software.live_tv.xml \
+    frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
 
 PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -40,7 +41,9 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_PACKAGES += \
     Bluetooth \
     Provision \
-    rild
+    rild \
+    displayd \
+    hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
 PRODUCT_BRAND := rockchip
 PRODUCT_MANUFACTURER := rockchip
