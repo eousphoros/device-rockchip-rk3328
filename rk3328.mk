@@ -48,7 +48,8 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
-        Launcher3
+        Launcher3 \
+        rild
 
 PRODUCT_NAME := rk3328
 PRODUCT_DEVICE := rk3328

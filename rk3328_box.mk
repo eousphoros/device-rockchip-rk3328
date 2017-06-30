@@ -39,7 +39,8 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES += \
     Bluetooth \
-    Provision
+    Provision \
+    rild
 
 PRODUCT_BRAND := rockchip
 PRODUCT_MANUFACTURER := rockchip
