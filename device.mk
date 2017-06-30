@@ -27,6 +27,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.udisk.visible=true \
+    ro.rk.displayd.enable=true \
     ro.hdmi.device_type=4
 
 PRODUCT_COPY_FILES += \
