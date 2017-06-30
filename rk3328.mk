@@ -22,11 +22,20 @@
 # lines, aosp and rk3328, hence its name.
 
 include device/rockchip/rk3328/BoardConfig.mk
+
 # Inherit from those products. Most specific first.
+$(call inherit-product, device/rockchip/rk3328/device.mk)
 $(call inherit-product, device/rockchip/rk3328/product.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 
 PRODUCT_CHARACTERISTICS := box
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.sf.lcd_density=160
+
+PRODUCT_AAPT_CONFIG := mdpi large xlarge
+PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -38,7 +47,6 @@ PRODUCT_DEVICE := rk3328
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := rk3328
 PRODUCT_MANUFACTURER := rockchip
-
 
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml

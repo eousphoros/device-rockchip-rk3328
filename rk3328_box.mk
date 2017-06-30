@@ -14,8 +14,28 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(LOCAL_PATH)/rk3328.mk)
-$(call inherit-product, device/rockchip/common/tv/tv_base.mk)
+include device/rockchip/rk3328/BoardConfig.mk
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, device/rockchip/rk3328/device.mk)
+$(call inherit-product, device/rockchip/rk3328/product.mk)
+$(call inherit-product, device/rockchip/common/device.mk)
+$(call inherit-product, device/google/atv/products/atv_generic.mk)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.sf.lcd_density=320
+
+PRODUCT_CHARACTERISTICS := tv
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.live_tv.xml:system/etc/permissions/android.software.live_tv.xml
+
+PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+PRODUCT_PACKAGES += \
+    Bluetooth \
+    Provision
 
 PRODUCT_BRAND := rockchip
 PRODUCT_MANUFACTURER := rockchip
@@ -23,5 +43,6 @@ PRODUCT_NAME := rk3328_box
 PRODUCT_DEVICE := rk3328_box
 PRODUCT_MODEL := rk3328-box
 
-PRODUCT_AAPT_CONFIG := normal tvdpi hdpi
-PRODUCT_AAPT_PREF_CONFIG := tvdpi
+# Get the long list of APNs
+PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml

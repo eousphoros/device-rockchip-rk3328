@@ -17,10 +17,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=wlan0 \
     ro.opengles.version=196609
 
-PRODUCT_PACKAGES += \
-    Launcher3
-
-
 #enable this for support f2fs with data partion
 #BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 # This ensures the needed build tools are available.
@@ -41,7 +37,6 @@ PRODUCT_COPY_FILES += \
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
-
 
 $(call inherit-product-if-exists, vendor/rockchip/rk3328/device-vendor.mk)
 

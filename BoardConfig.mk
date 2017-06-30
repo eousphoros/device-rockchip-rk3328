@@ -47,7 +47,7 @@ MALLOC_SVELTE := true
 
 GRAPHIC_MEMORY_PROVIDER := dma_buf
 
-//MAX-SIZE=800M, for generate out/.../system.img
+# MAX-SIZE=800M, for generate out/.../system.img
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1208860800
 
 DEVICE_PACKAGE_OVERLAYS += device/rockchip/rk3328/overlay
@@ -66,3 +66,6 @@ ENABLE_CPUSETS := true
 BOARD_WITH_MEM_OPTIMISE := true
 
 PRODUCT_HAVE_OPTEE := false
+PRODUCT_HAVE_RKAPPS := false
+PRODUCT_HAVE_RFTESTTOOL := false
+PRODUCT_HAVE_RKPHONE_FEATURES := false
