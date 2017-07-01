@@ -30,6 +30,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.rk.displayd.enable=true \
     ro.hdmi.device_type=4
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    service.adb.tcp.port=5555
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.${TARGET_BOARD_PLATFORM_PRODUCT}.rc:root/init.${TARGET_BOARD_PLATFORM_PRODUCT}.rc \
     $(LOCAL_PATH)/fstab.rk30board.bootmode.unknown:root/fstab.rk30board.bootmode.unknown \
