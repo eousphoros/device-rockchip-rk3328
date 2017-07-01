@@ -56,6 +56,10 @@ PRODUCT_PACKAGES += \
     displayd \
     hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
+PRODUCT_PACKAGES += \
+    ESFileExplorer \
+    WIFIADB
+
 PRODUCT_NAME := rk3328
 PRODUCT_DEVICE := rk3328
 PRODUCT_BRAND := Android

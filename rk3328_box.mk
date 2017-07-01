@@ -45,6 +45,11 @@ PRODUCT_PACKAGES += \
     displayd \
     hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
+PRODUCT_PACKAGES += \
+    ESFileExplorer \
+    WIFIADB \
+    SideloadLauncher
+
 PRODUCT_BRAND := rockchip
 PRODUCT_MANUFACTURER := rockchip
 PRODUCT_NAME := rk3328_box
