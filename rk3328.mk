@@ -71,3 +71,4 @@ PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
 
 $(call inherit-product, vendor/google/build/opengapps-packages.mk)
+$(call inherit-product, vendor/widevine/widevine.mk)
