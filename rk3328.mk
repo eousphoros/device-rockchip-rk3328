@@ -56,10 +56,6 @@ PRODUCT_PACKAGES += \
     displayd \
     hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
-PRODUCT_PACKAGES += \
-    ESFileExplorer \
-    WIFIADB
-
 PRODUCT_NAME := rk3328
 PRODUCT_DEVICE := rk3328
 PRODUCT_BRAND := Android
@@ -72,3 +68,4 @@ PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/s
 
 $(call inherit-product, vendor/google/build/opengapps-packages.mk)
 $(call inherit-product, vendor/widevine/widevine.mk)
+$(call inherit-product, vendor/ayufan/apps/vendor.mk)
