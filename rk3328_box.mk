@@ -45,11 +45,6 @@ PRODUCT_PACKAGES += \
     displayd \
     hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
-PRODUCT_PACKAGES += \
-    ESFileExplorer \
-    WIFIADB \
-    SideloadLauncher
-
 PRODUCT_BRAND := rockchip
 PRODUCT_MANUFACTURER := rockchip
 PRODUCT_NAME := rk3328_box
@@ -62,3 +57,4 @@ PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/s
 
 $(call inherit-product, vendor/google/atv-build/atv-vendor.mk)
 $(call inherit-product, vendor/widevine/widevine.mk)
+$(call inherit-product, vendor/ayufan/apps/vendor.mk)
