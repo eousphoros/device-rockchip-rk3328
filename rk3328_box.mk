@@ -28,7 +28,9 @@ $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, device/google/atv/products/atv_generic.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=320
+    ro.sf.lcd_density=320 \
+    sys.hwc.width=1920 \
+    sys.hwc.height=1080
 
 PRODUCT_CHARACTERISTICS := tv
 
