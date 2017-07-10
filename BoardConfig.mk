@@ -70,6 +70,8 @@ PRODUCT_HAVE_RKAPPS := false
 PRODUCT_HAVE_RFTESTTOOL := false
 PRODUCT_HAVE_RKPHONE_FEATURES := false
 
+BOARD_HAVE_DONGLE := true
+
 # Re-enable emulator for 32-bit
 BUILD_EMULATOR := false
 
