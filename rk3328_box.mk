@@ -19,7 +19,10 @@ include device/rockchip/rk3328/BoardConfig.mk
 GAPPS_VARIANT := micro
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 GAPPS_FORCE_BROWSER_OVERRIDES := true
-GAPPS_EXCLUDED_PACKAGES += SetupWraith
+
+GAPPS_EXCLUDED_PACKAGES += \
+    SetupWraith \
+    AndroidMediaShell
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/rockchip/rk3328/device.mk)
