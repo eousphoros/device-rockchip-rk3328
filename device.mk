@@ -34,7 +34,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.${TARGET_BOARD_PLATFORM_PRODUCT}.rc:root/init.${TARGET_BOARD_PLATFORM_PRODUCT}.rc \
+    $(LOCAL_PATH)/init.box.rc:root/init.box.rc \
+    $(LOCAL_PATH)/init.tablet.rc:root/init.tablet.rc \
     $(LOCAL_PATH)/fstab.rk30board.bootmode.unknown:root/fstab.rk30board.bootmode.unknown \
     $(LOCAL_PATH)/fstab.rk30board.bootmode.emmc:root/fstab.rk30board.bootmode.emmc
 

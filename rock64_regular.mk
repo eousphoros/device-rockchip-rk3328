@@ -12,55 +12,61 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 #
+# This file is the build configuration for an aosp Android
+# build for rockchip rk3328 hardware. This cleanly combines a set of
+# device-specific aspects (drivers) with a device-agnostic
+# product configuration (apps). Except for a few implementation
+# details, it only fundamentally contains two inherit-product
+# lines, aosp and rk3328, hence its name.
 
 include device/rockchip/rk3328/BoardConfig.mk
 
-GAPPS_VARIANT := micro
-GAPPS_FORCE_PACKAGE_OVERRIDES := true
-GAPPS_FORCE_BROWSER_OVERRIDES := true
+GAPPS_VARIANT := nano
+GAPPS_EXCLUDED_PACKAGES += SetupWraith
 
-GAPPS_EXCLUDED_PACKAGES += \
-    SetupWraith \
-    AndroidMediaShell
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.live_tv.xml:system/etc/permissions/android.software.live_tv.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/rockchip/rk3328/device.mk)
 $(call inherit-product, device/rockchip/rk3328/product.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
-$(call inherit-product, device/google/atv/products/atv_generic.mk)
+
+PRODUCT_CHARACTERISTICS := box
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=320 \
-    sys.hwc.width=1920 \
-    sys.hwc.height=1080
-
-PRODUCT_CHARACTERISTICS := tv
+    ro.target.product=box \
+    ro.sf.lcd_density=160
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.live_tv.xml:system/etc/permissions/android.software.live_tv.xml \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
 
-PRODUCT_AAPT_CONFIG := normal large xlarge hdpi xhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_CONFIG := mdpi large xlarge
+PRODUCT_AAPT_PREF_CONFIG := mdpi
 
+# Live Wallpapers
 PRODUCT_PACKAGES += \
-    Bluetooth \
-    Provision \
+    Launcher3 \
     rild \
     displayd \
     hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
-PRODUCT_BRAND := rockchip
-PRODUCT_MANUFACTURER := rockchip
-PRODUCT_NAME := rk3328_box
+PRODUCT_MANUFACTURER := ayufan
+PRODUCT_BRAND := Android
 PRODUCT_DEVICE := rk3328_box
-PRODUCT_MODEL := rk3328-box
+PRODUCT_NAME := rock64_regular
+PRODUCT_MODEL := rock64-regular
 
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
 
-$(call inherit-product, vendor/google/atv-build/atv-vendor.mk)
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
 $(call inherit-product, vendor/widevine/widevine.mk)
 $(call inherit-product, vendor/ayufan/apps/vendor.mk)

@@ -14,6 +14,14 @@
 # limitations under the License.
 #
 
+ifeq ($(TARGET_PRODUCT),rock64_regular)
+  TARGET_BOARD_PLATFORM_PRODUCT := box
+else
+ifeq ($(TARGET_PRODUCT),rock64_atv)
+  TARGET_BOARD_PLATFORM_PRODUCT := box
+endif
+endif
+
 # Use the non-open-source parts, if they're present
 -include vendor/rockchip/rk3328/BoardConfigVendor.mk
 -include device/rockchip/common/BoardConfig.mk
