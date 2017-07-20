@@ -38,10 +38,10 @@ $(call inherit-product, device/rockchip/rk3328/product.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 
-PRODUCT_CHARACTERISTICS := box
+PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.target.product=box \
+    ro.target.product=tablet \
     ro.sf.lcd_density=160
 
 PRODUCT_COPY_FILES += \
@@ -59,7 +59,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_MANUFACTURER := ayufan
 PRODUCT_BRAND := Android
-PRODUCT_DEVICE := rk3328_box
+PRODUCT_DEVICE := rk3328
 PRODUCT_NAME := rock64_regular
 PRODUCT_MODEL := rock64-regular
 
