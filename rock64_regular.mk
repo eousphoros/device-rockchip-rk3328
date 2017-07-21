@@ -35,8 +35,8 @@ PRODUCT_COPY_FILES += \
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/rockchip/rk3328/device.mk)
 $(call inherit-product, device/rockchip/rk3328/product.mk)
-$(call inherit-product, build/target/product/full_base.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 
@@ -53,6 +53,7 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     Launcher3 \
+    Provision \
     rild \
     displayd \
     hdmi_cec.$(TARGET_BOARD_HARDWARE)
