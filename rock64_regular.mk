@@ -24,7 +24,7 @@
 include device/rockchip/rk3328/BoardConfig.mk
 
 GAPPS_VARIANT := nano
-GAPPS_EXCLUDED_PACKAGES += SetupWraith
+GAPPS_EXCLUDED_PACKAGES += SetupWraith SetupWizard
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.live_tv.xml:system/etc/permissions/android.software.live_tv.xml
