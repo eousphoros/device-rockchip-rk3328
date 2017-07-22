@@ -25,7 +25,6 @@ GAPPS_EXCLUDED_PACKAGES += \
     AndroidMediaShell
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/rockchip/rk3328/device.mk)
 $(call inherit-product, device/rockchip/rk3328/product.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, device/google/atv/products/atv_generic.mk)

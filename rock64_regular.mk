@@ -33,22 +33,21 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/rockchip/rk3328/device.mk)
 $(call inherit-product, device/rockchip/rk3328/product.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
-PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_CHARACTERISTICS := box
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.target.product=tablet \
+    ro.target.product=box \
     ro.sf.lcd_density=160
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.hdmi.cec.xml:system/etc/permissions/android.hardware.hdmi.cec.xml
 
-PRODUCT_AAPT_CONFIG := mdpi large xlarge
-PRODUCT_AAPT_PREF_CONFIG := mdpi
+# PRODUCT_AAPT_CONFIG := mdpi large xlarge
+# PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
