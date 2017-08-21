@@ -37,7 +37,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.box.rc:root/init.box.rc \
     $(LOCAL_PATH)/init.tablet.rc:root/init.tablet.rc \
     $(LOCAL_PATH)/fstab.rk30board.bootmode.unknown:root/fstab.rk30board.bootmode.unknown \
-    $(LOCAL_PATH)/fstab.rk30board.bootmode.emmc:root/fstab.rk30board.bootmode.emmc
+    $(LOCAL_PATH)/fstab.rk30board.bootmode.sd:root/fstab.rk30board.bootmode.sd \
+    $(LOCAL_PATH)/fstab.rk30board.bootmode.emmc:root/fstab.rk30board.bootmode.emmc \
+    $(LOCAL_PATH)/recovery.emmc.fstab:recovery/root/etc/recovery.emmc.fstab \
+    $(LOCAL_PATH)/recovery.sd.fstab:recovery/root/etc/recovery.sd.fstab
 
 PRODUCT_COPY_FILES += \
 	device/rockchip/rk3328/110b0030_pwm.kl:system/usr/keylayout/110b0030_pwm.kl\
