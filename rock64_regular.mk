@@ -67,6 +67,6 @@ PRODUCT_MODEL := rock64-regular
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
 
-$(call inherit-product, vendor/google/build/opengapps-packages.mk)
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 $(call inherit-product, vendor/widevine/widevine.mk)
 $(call inherit-product, vendor/ayufan/apps/vendor.mk)
