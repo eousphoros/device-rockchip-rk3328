@@ -10,6 +10,8 @@ map_irqs() {
 	done	
 }
 
+/system/bin/ifconfig eth0 up
+
 map_irqs 2 ehci ohci dwc_otg dw-mci
 map_irqs 4 xhci
 map_irqs 8 eth0
