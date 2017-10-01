@@ -50,6 +50,16 @@ PRODUCT_COPY_FILES += \
 	device/rockchip/rk3328/ff1b0030_pwm.kl:system/usr/keylayout/ff1b0030_pwm.kl \
 	$(LOCAL_PATH)/audio_policy_rk3328.conf:system/etc/audio_policy.conf
 
+# Stagefright FFMPEG plugin
+PRODUCT_PACKAGES += \
+    libffmpeg_extractor \
+    libffmpeg_omx \
+    media_codecs_ffmpeg.xml
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so
+
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
