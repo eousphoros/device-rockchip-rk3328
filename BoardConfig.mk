@@ -62,10 +62,10 @@ DEVICE_PACKAGE_OVERLAYS += device/rockchip/rk3328/overlay
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
-  ifeq ($(TARGET_BUILD_VARIANT),user)
-    WITH_DEXPREOPT := true
-  else
-    WITH_DEXPREOPT := false
+  ifneq ($(filter user userdebug,$(TARGET_BUILD_VARIANT)),)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
   endif
 endif
 
