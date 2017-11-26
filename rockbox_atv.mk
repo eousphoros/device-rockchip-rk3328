@@ -30,7 +30,7 @@ $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, device/google/atv/products/atv_generic.mk)
 
 # setup dalvik vm configs.
-$(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320 \
@@ -57,7 +57,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_MANUFACTURER := ayufan
 PRODUCT_BRAND := PINE64 Inc.
 PRODUCT_DEVICE := rk3328_box
-PRODUCT_NAME := rock64_atv
+PRODUCT_NAME := rockbox_atv
 PRODUCT_MODEL := Rock64
 
 # Get the long list of APNs

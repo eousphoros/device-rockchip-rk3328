@@ -4,3 +4,6 @@ add_lunch_combo rock64_regular-user
 add_lunch_combo rock64_atv-eng
 add_lunch_combo rock64_atv-userdebug
 add_lunch_combo rock64_atv-user
+add_lunch_combo rockbox_atv-eng
+add_lunch_combo rockbox_atv-userdebug
+add_lunch_combo rockbox_atv-user

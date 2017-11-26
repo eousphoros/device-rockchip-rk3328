@@ -37,6 +37,9 @@ $(call inherit-product, device/rockchip/rk3328/product.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
+# setup dalvik vm configs.
+$(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
+
 PRODUCT_CHARACTERISTICS := box
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -58,10 +61,10 @@ PRODUCT_PACKAGES += \
     hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
 PRODUCT_MANUFACTURER := ayufan
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := PINE64 Inc.
 PRODUCT_DEVICE := rk3328
 PRODUCT_NAME := rock64_regular
-PRODUCT_MODEL := rock64-regular
+PRODUCT_MODEL := Rock64
 
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml

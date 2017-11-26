@@ -17,3 +17,4 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/rock64_regular.mk \
     $(LOCAL_DIR)/rock64_atv.mk \
+    $(LOCAL_DIR)/rockbox_atv.mk \
