@@ -55,10 +55,10 @@ PRODUCT_PACKAGES += \
     hdmi_cec.$(TARGET_BOARD_HARDWARE)
 
 PRODUCT_MANUFACTURER := ayufan
-PRODUCT_BRAND := PINE64 Inc.
+PRODUCT_BRAND := PINE64
 PRODUCT_DEVICE := rk3328_box
 PRODUCT_NAME := rockbox_atv
-PRODUCT_MODEL := Rock64
+PRODUCT_MODEL := Rockbox
 
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
