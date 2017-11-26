@@ -28,8 +28,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.udisk.visible=true \
     ro.rk.displayd.enable=true \
-    ro.hdmi.device_type=4 \
-    persist.sys.overscan.main="overscan 100,100,100,100"
+    ro.hdmi.device_type=4
 
 PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.tcp.port=5555
