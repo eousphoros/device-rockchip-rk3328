@@ -29,8 +29,16 @@ $(call inherit-product, device/rockchip/rk3328/product.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, device/google/atv/products/atv_generic.mk)
 
+# Force small heap sizes
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=8m \
+    dalvik.vm.heapgrowthlimit=128m \
+    dalvik.vm.heapsize=174m \
+    ro.config.low_ram=true \
+    ro.logd.size=64K
+
 # setup dalvik vm configs.
-$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320 \
