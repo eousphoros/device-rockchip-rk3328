@@ -34,9 +34,7 @@ $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-hea
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=320 \
-    ro.target.product=box \
-    sys.hwc.width=1920 \
-    sys.hwc.height=1080
+    ro.target.product=box 
 
 PRODUCT_CHARACTERISTICS := tv
 
